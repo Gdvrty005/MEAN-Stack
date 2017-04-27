@@ -1,0 +1,21 @@
+<a href="#/topics">Go Back</a>
+<div class="panel panel-default" ng-init="getTopic()">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{topic.title}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+                <div class="col-md-8">
+                   <ul class="list-group">
+                    <li class="list-group-item">Title: {{topic.title}}</li>
+                    <li class="list-group-item">Name: {{topic.name}}</li>
+                    <li class="list-group-item">Description: {{topic.description}}</li>
+                   </ul>
+                  
+                </div>           
+    </div>
+  </div>
+</div>
+<div class="pull-right">
+    <a href="#/topics/edit/{{topic._id}}">Edit</a> | <a href="#" ng-click="removeTopic(topic._id)">Delete</a>
+</div>
