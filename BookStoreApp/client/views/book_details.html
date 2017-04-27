@@ -1,0 +1,24 @@
+<a href="#/books">Go Back</a>
+<div class="panel panel-default" ng-init="getBook()">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{book.Title}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+           <div class="col-md-3">
+                <img class="thumbnail" ng-src="{{book.Img_url}}">
+           </div>
+                <div class="col-md-8">
+                   <ul class="list-group">
+                    <li class="list-group-item">Genre: {{book.Genre}}</li>
+                    <li class="list-group-item">Author: {{book.Author}}</li>
+                    <li class="list-group-item">Pages: {{book.Pages}}</li>
+                   </ul>
+                   <a target="_blank" class="btn btn-primary" href="{{book.Buy_url}}">Buy on Amazon</a>
+                </div>           
+    </div>
+  </div>
+</div>
+<div class="pull-right">
+    <a href="#/books/edit/{{book._id}}">Edit</a> | <a href="#" ng-click="removeBook(book._id)">Delete</a>
+</div>

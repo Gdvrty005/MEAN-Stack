@@ -1,0 +1,46 @@
+<a href="#/books">Go Back</a>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add Book</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+        <div class="col-md-12">
+            <form ng-submit="addBook()">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" ng-model="book.Title" placeholder="Title">
+                </div>
+                <div class="form-group">
+                    <label>Genre</label>
+                    <select ng-model="book.Genre" class="form-control">
+                        <option value="Thriller">Thriller</option>
+                        <option value="Fiction">Fiction</option>
+                        <option value="Social">Social</option>
+                        <option value="Philosophy">Philosophy</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Author</label>
+                    <input type="text" class="form-control" ng-model="book.Author" placeholder="Author">
+                </div>
+                <div class="form-group">
+                    <label>Pages</label>
+                    <input type="text" class="form-control" ng-model="book.Pages" placeholder="Pages">
+                </div>
+                <div class="form-group">
+                    <label>Image Url</label>
+                    <input type="text" class="form-control" ng-model="book.Img_url" placeholder="Image_Url">
+                </div>
+                <div class="form-group">
+                    <label>Buy Url</label>
+                    <input type="text" class="form-control" ng-model="book.Buy_url" placeholder="Buy_Url">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>    
+    </div>
+  </div>
+</div>
