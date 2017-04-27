@@ -1,0 +1,10 @@
+<div class="panel panel-success">
+    <div class="panel-heading">Clothing</div>
+    <div class="panel-body" style="overflow:scroll">
+        <div class="col-md-3" *ngFor="let apparell of apparells">
+            <div class="centered-div">{{apparell.name}}</div>
+            <img class="thumbnail" src={{apparell.img_url}}/>
+            <div class="centered-div">{{apparell.price}} &nbsp;&nbsp;  <span class="glyphicon glyphicon-plus-sign" (click)="addToCart(apparell)" aria-hidden="true"></span></div>
+        </div>
+    </div>
+</div>

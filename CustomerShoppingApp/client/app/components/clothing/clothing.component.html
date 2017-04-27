@@ -1,0 +1,11 @@
+<div class="panel panel-success">
+    <div class="panel-heading">Clothing</div>
+    <div class="panel-body" style="overflow:scroll">
+        <div class="col-md-3" *ngFor="let clo of clothing">
+            <div class="centered-div">{{clo.brand}}</div>
+            <img class="thumbnail" src={{clo.img_url}}/>
+            <div class="centered-div">{{clo.price}} &nbsp;&nbsp; <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></div>
+            
+        </div>
+    </div>
+</div>

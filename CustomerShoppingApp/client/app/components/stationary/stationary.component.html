@@ -1,0 +1,10 @@
+<div class="panel panel-success">
+    <div class="panel-heading">Stationary</div>
+    <div class="panel-body" style="overflow:scroll">
+        <div class="col-md-3" *ngFor="let sta of stationary">
+            <div class="centered-div">{{sta.name}}</div>
+            <img class="thumbnail" src={{sta.img_url}}/>
+            <div class="centered-div">{{sta.price}} &nbsp;&nbsp; <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></div>
+        </div>
+    </div>
+</div>

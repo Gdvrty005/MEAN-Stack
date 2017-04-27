@@ -1,0 +1,10 @@
+<div class="panel panel-success">
+    <div class="panel-heading">Entertainment</div>
+    <div class="panel-body" style="overflow:scroll">
+        <div class="col-md-3" *ngFor="let ent of entertainment">
+            <div class="centered-div">{{ent.name}}</div>
+            <img class="thumbnail" src={{ent.img_url}}/>
+            <div class="centered-div">{{ent.price}} &nbsp;&nbsp;  <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></div>
+        </div>
+    </div>
+</div>
