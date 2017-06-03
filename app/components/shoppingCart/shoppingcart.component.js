@@ -1,0 +1,66 @@
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var orders_service_1 = require("../../services/orders_service/orders.service");
+var cart_service_1 = require("../../services/cart_service/cart.service");
+var common_service_1 = require("../../services/common_services/common.service");
+var authentication_service_1 = require("../../services/authenticationService/authentication.service");
+var router_1 = require("@angular/router");
+var ShoppingcartComponent = (function () {
+    function ShoppingcartComponent(router, cartService, authenticationService, orderService, commonService) {
+        this.router = router;
+        this.cartService = cartService;
+        this.authenticationService = authenticationService;
+        this.orderService = orderService;
+        this.commonService = commonService;
+        this.cartItems = [];
+        this.totalPrice = 0;
+        this.totalRewards = 0;
+    }
+    ShoppingcartComponent.prototype.ngOnInit = function () {
+        this.cartItems = this.cartService.getQty();
+        this.totalPrice = this.cartService.getTotalPrice();
+        this.totalRewards = this.cartService.getRewards();
+    };
+    ShoppingcartComponent.prototype.clearCart = function (cartItems) {
+        this.cartService.clearCart(cartItems);
+        alert('Cart Cleared!!');
+        this.router.navigate(['']);
+    };
+    ShoppingcartComponent.prototype.removeItem = function (cartItem) {
+        this.cartItems = this.cartService.removeItem(cartItem);
+        this.totalPrice = this.cartService.getTotalPrice();
+        this.totalRewards = this.cartService.getRewards();
+    };
+    ShoppingcartComponent.prototype.checkoutAsGuest = function () {
+        this.router.navigate(['login']);
+    };
+    ShoppingcartComponent.prototype.checkout = function (cartItems) {
+        console.log(cartItems);
+        this.orderService.addOrders(cartItems);
+    };
+    return ShoppingcartComponent;
+}());
+ShoppingcartComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'app-shoppingcart',
+        templateUrl: 'shoppingcart.component.html'
+    }),
+    __metadata("design:paramtypes", [router_1.Router,
+        cart_service_1.CartService,
+        authentication_service_1.AuthenticationService,
+        orders_service_1.OrderService,
+        common_service_1.CommonService])
+], ShoppingcartComponent);
+exports.ShoppingcartComponent = ShoppingcartComponent;
+//# sourceMappingURL=shoppingcart.component.js.map
